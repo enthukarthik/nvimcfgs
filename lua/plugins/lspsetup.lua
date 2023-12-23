@@ -70,7 +70,7 @@ return {
 		config = function()
 			require("neoconf").setup({})
 
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
+			-- local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local lspconfig = require("lspconfig")
 
 			local signs = { Error = " ", Warm = " ", Hint = "", Info = " " }
@@ -79,11 +79,11 @@ return {
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
 
-			local capabilities = cmp_nvim_lsp.default_capabilities()
+			-- local capabilities = cmp_nvim_lsp.default_capabilities()
 
 			-- configure lsp setup
 			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
+				-- capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {
 					Lua = {
@@ -102,7 +102,7 @@ return {
 
 			-- configure python setup
 			lspconfig.pyright.setup({
-				capabilities = capabilities,
+				-- capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {
 					pyright = {
