@@ -14,7 +14,8 @@ M.on_attach = function(client, bufnr)
 	mapkey.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
 	mapkey.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to prev diagnostic in buf
 	mapkey.set("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buf
-	mapkey.set("n", "<leader>tt", "<cmd>Lspsaga term_toggle<CR>", opts) -- jump to next diagnostic in buffer
+	-- mapkey.set("n", "<A-i>", "<cmd>Lspsaga term_toggle<CR>", opts) -- jump to next diagnostic in buffer
+	-- mapkey.set("t", "<A-i>", "<C-\\><C-n><cmd>Lspsaga term_toggle<CR>", opts) -- jump to next diagnostic in buffer
 	mapkey.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 
 	if client.name == "pyright" then
