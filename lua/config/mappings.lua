@@ -42,5 +42,4 @@ map("n", "<leader>nh", ":nohl<CR>", {})
 map("v", "<", "<gv", {})
 map("v", ">", ">gv", {})
 
-map("n", "<leader>gg", ":LazyGit<CR>", {})
 
