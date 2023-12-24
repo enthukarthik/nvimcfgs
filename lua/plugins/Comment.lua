@@ -1,9 +1,9 @@
 return {
-	"numToStr/Comment.nvim",
-	event = "VeryLazy",
-	opts = {
-		-- add any options here
-	},
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    opts = {
+        -- add any options here
+    },
 }
 -- gcc - to add a linewise comment
 -- gbc - to add blockwise comment
