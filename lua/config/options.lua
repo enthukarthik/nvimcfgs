@@ -1,44 +1,45 @@
-local opt = vim.opt
+local options = {
+	number = true,
+	relativenumber = true,
+	list = true,
+	listchars = { tab = "→ ", trail = "·", extends = "»", precedes = "«", eol = "¬" },
+	background = "dark",
+	termguicolors = true,
+	cursorline = true,
+	wrap = false,
+	signcolumn = "yes",
+	breakindent = true,
 
--- Apperance
-opt.number = true
-opt.relativenumber = true
-opt.list = true
-opt.listchars = { tab = '→ ', trail = '·', extends = '»', precedes = '«', eol = '¬' }
-opt.background = "dark"
-opt.termguicolors = true
-opt.cursorline = true         -- update the entire line where the cursor is
-opt.wrap = false
-opt.signcolumn = "yes"
-opt.breakindent = true
+	ignorecase = true,
+	hlsearch = false,
+	smartcase = true,
+	inccommand = "split",
 
--- Search
-opt.ignorecase = true
-opt.hlsearch = false;
-opt.smartcase = true
-opt.inccommand = "split" -- results of search/substitution show in a split window below
+	expandtab = true,
+	tabstop = 4,
+	softtabstop = 4,
+	shiftwidth = 4,
+	shiftround = true,
+	smartindent = true,
 
--- Tab/Indentation
-opt.expandtab = true          -- Use spaces instead of tabs
-opt.tabstop = 4               -- Tab key is display with 4 spaces in normal mode
-opt.softtabstop = 4           -- Tab key indents by 4 spaces in insert mode
-opt.shiftwidth = 4            -- >> indents by 4 spaces
-opt.shiftround = true         -- >> indents to next multiple of 'shiftwidth'
-opt.smartindent = true
+	scrolloff = 15,
+	splitright = true,
+	splitbelow = true,
+	swapfile = false,
+	undofile = true,
+	clipboard = "unnamed,unnamedplus",
+	virtualedit = "block",
+	updatetime = 250,
+	timeoutlen = 300,
+	mouse = "a",
+	mousemoveevent = true,
+	wildmode = "longest:full,full",
+	completeopt = "menu,menuone,noselect",
+}
 
--- Behavior
-opt.scrolloff = 999             -- keep few lines above and below the cursor during scrolling. 999 ensure scrolling happens from the middle of the screen
-opt.splitright = true
-opt.splitbelow = true
-opt.swapfile = false
-opt.undofile = true
-opt.clipboard = "unnamed,unnamedplus"
-opt.virtualedit = "block" -- <C-v> works on block even if there are no characters to select
-opt.updatetime = 250
-opt.timeoutlen = 300          -- time in milliseconds to wait for a mapped sequence to complete
-opt.mouse = "a"
-opt.mousemoveevent = true
-opt.wildmode = 'longest:full,full'
-opt.completeopt = { "menuone", "noselect" }
+vim.opt.shortmess:append("IsF")
 
--- vim.lsp.set_log_level(vim.log.levels.INFO)
+for option, value in pairs(options) do
+	vim.opt[option] = value
+end
+

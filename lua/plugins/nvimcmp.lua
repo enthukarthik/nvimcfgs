@@ -8,6 +8,8 @@ return {
 			-- follow latest release.
 			version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		},
+        "rafamadriz/friendly-snippets",
+        "honza/vim-snippets",
 	},
 	config = function()
 		local cmp = require("cmp")
