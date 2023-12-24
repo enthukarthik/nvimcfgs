@@ -5,6 +5,13 @@ return {
         "williamboman/mason.nvim",
         cmd = "Mason",
         event = "VeryLazy",
+        opts = {
+            ensure_installed = {
+                "clangd",
+                "clang-format",
+                "codelldb",
+            },
+        },
         config = function()
             require("mason").setup({
                 ui = {
@@ -119,6 +126,11 @@ return {
                         },
                     },
                 },
+            })
+
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
             })
 
             local luacheck = require("efmls-configs.linters.luacheck")
